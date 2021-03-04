@@ -45,7 +45,7 @@ export default {
       left: 0
       padding: 10vmin 17vmin
       @media (max-width: $iphone)
-        padding: 6vmin 4vmin
+        padding: 4vmax 4vmax
       color: #fff
       .section-title
         color: #fff

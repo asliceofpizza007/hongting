@@ -3,10 +3,6 @@ footer#footer
   .footer-content.view-fix
     .logo
       img(src="@img/footer-icon.png" alt="logo")
-      p
-        span 翃鼎有限公司
-        br
-        span HONGTING CO., LTD.
     .contact-area
       .job
         div
@@ -86,17 +82,14 @@ export default {
     .footer-content
       padding-top: 9vmin
       padding-bottom: 3vmin
-      .logo
-        p
-          >span
-            font-size: 3vmin
-            &:first-child
-              font-size: 4vmin
       .contact-area
         >div
           padding: 0 5vmin
           .subject
             font-size: 6vmin
+          &.job
+            img
+              max-width: 10vmin
           &.contact
             .mail
               >img
@@ -111,10 +104,5 @@ export default {
     .footer-content
       .logo
         >img
-          max-width: 10vmin
-      .contact-area
-        >div
-          &.job
-            img
-              max-width: 40%
+          max-width: 50vmin
 </style>

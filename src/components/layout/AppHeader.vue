@@ -19,10 +19,6 @@ header#header(:class="toggleClass")
     .bottom.view-fix
       .logo
         img(src="@img/header-icon.png" alt="logo")
-        p
-          span 翃鼎有限公司
-          br
-          span HONGTING CO., LTD.
       Nav
   .header-mb
     .hamburger(
@@ -32,12 +28,9 @@ header#header(:class="toggleClass")
       span.bar
       span.bar
       span.bar
+      span.bar
     .logo
       img(src="@img/header-icon.png" alt="logo")
-      p
-        span 翃鼎有限公司
-        br
-        span HONGTING CO., LTD.
     Nav(@toggle-menu="toggleNav")
     .lang-selector
       span.lang(
@@ -112,15 +105,6 @@ export default {
   z-index: 1000
   .logo
     +flex-box()
-    >img
-      margin-right: 0.7rem
-    p
-      line-height: 1.2
-      >span
-        font-size: 20px
-        &:first-child
-          font-size: 35px
-  
   .lang-selector
     +flex-box()
     margin-right: 30px
@@ -177,13 +161,7 @@ export default {
     .logo
       margin-bottom: 5vmax
       >img
-        margin-right: 4vmin
-        max-width: 10vmin
-      p
-        >span
-          font-size: 2vmin
-          &:first-child
-           font-size: 3.5vmin
+        max-width: 50vmin
     .lang-selector
       flex-direction: column
       margin-right: unset
@@ -194,30 +172,39 @@ export default {
         &:first-child
           margin-bottom: 2vmax
         &.active
-          text-shadow: 0 0 2px $primary-color, 0 0 1px $primary-color
+          font-weight: bold
     .hamburger
       +flex-box()
       flex-direction: column
       position: absolute
-      top: 6vmin
+      top: 4vmin
       right: 3vmin
       width: 6vmin
       height: 5vmin
       .bar
+        position: absolute
+        left: 0
+        display: block
         width: 100%
-        height: 1vmin
+        height: 3px
         background-color: #000
-        transition: transform 0.5s ease-in-out, width 0.5s ease-in-out
-        &:not(:first-child)
-          margin-top: 1.5vmin
+        transition: all 0.25s ease-in-out
+        &:not(:first-child):not(:last-child)
+          top: 50%
+          transform: translateY(-50%)
+        &:first-child
+          top: 0
+        &:last-child
+          bottom: 0
       &.cross
         .bar
-          &:not(:first-child)
-            margin-top: unset
-          &:first-child
-            transform: rotate(45deg) translate(5%, 100%)
-          &:nth-child(2)
-            width: 0
+          &:first-child,
           &:last-child
-            transform: rotate(-45deg) translate(5%, -100%)
+            width: 0%
+            top: 50%
+            left: 50%
+          &:nth-child(2)
+            transform: translateY(-50%) rotate(45deg)
+          &:nth-child(3)
+            transform: translateY(-50%) rotate(-45deg)
 </style>
