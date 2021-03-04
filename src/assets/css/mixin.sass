@@ -1,0 +1,25 @@
+@mixin flex-box($align: center, $justify: center)
+  display: flex
+  justify-content: $justify
+  align-items: $align
+
+@mixin hover-effect($effect-color: #fff, $pseudo-height: 1px)
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: -4px
+    left: 50%
+    transform: translateX(-50%)
+    display: block
+    margin: auto
+    width: 0px
+    height: $pseudo-height
+    background-color: transparent
+    transition: width 0.5s ease, background-color 0.5s ease
+  &:hover
+    color: $effect-color
+    text-shadow: 0 0 1px $effect-color, 0 0 1px $effect-color
+    &::after
+      width: 100%
+      background-color: $effect-color
